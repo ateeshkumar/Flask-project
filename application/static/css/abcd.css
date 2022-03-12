@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f7f7f7; */
+}
+.wraper{
+    background: #fff;
+    width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
+}
+.form{
+    padding: 25px 30px;
+}
+.form header{
+    font-size: 25px;
+    font-weight: 600;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 10px;
+}
+.form form{
+    margin: 20px 0px;
+}
+.form form .error-txt{
+    color: #721c24;
+    background: #f8d7da;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c5cb;
+    display: none;
+}
+.form form .field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    position: relative;
+}
+.form form .name-detail{
+    display: flex;
+}
+.form form .name-detail .field:first-child{
+    margin-right: 40px;
+}
+.form form .name-detail .field:last-child{
+    margin-left: 10px;
+}
+.form form .field label{
+    margin-bottom: 2px;
+}
+.form form .field input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px
+}
+.form form .image input{
+    font-size: 17px;
+    border: none;
+    padding: 0px 0px;
+    margin-bottom: 0px;
+}
+.form form .button input{
+    margin-top: 13px;
+    height: 45px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form .link{
+    font-size: 17px;
+    text-align: center;
+    margin: 10px 0px;
+}
+.form .link a{
+    color: #333;
+    text-decoration: none;
+}
+.form .link a:hover{
+    text-decoration: underline;
+}
+.form form .field i{
+    position: absolute;
+    right: -4px;
+    color: #ccc;
+    top: 53%;
+    transform: translateY(-50);
+    cursor: pointer;
+}
+.form form .field i.activate::before{
+    color: #333;
+    content: "\f070";
+
+}
+
+/* use for user section */
+.user{
+    padding: 25px 30px;
+}
+.user header,.user-list a{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    border-bottom: 2px solid #e6e6e6;
+}
+.user header .container,
+.user-list a .container{
+    display: flex;
+}
+.user header .container img{
+    height: 50px;
+    width: 50px;
+}
+.wraper img{
+    border-radius: 50%;
+    object-fit: cover;
+}
+:is(.user, .user-list) .detail{
+    margin-left: 15px;
+}
+:is(.user,.user-list) .detail span{
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.user header .logout{
+    color: #fff;
+    font-size: 17px;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.user .search{
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.user .search .text{
+    font-size: 17px;
+}
+.user .search input{
+    position: absolute;
+    width: 81%;
+    height: 40px;
+    border: 1PX solid #ccc;
+    border-radius: 5px 0px 0px 5px;
+    padding: 0px 13px;
+    font-size: 16px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.user .search input.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.user .search button{
+    width: 47px;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: #333;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+.user .search button.active{
+    color: #fff;
+    background: #333;
+}
+.user .search button.active i::before{
+    content: "\f00d";
+}
+.user-list a{
+    text-decoration: none;
+    color: #000;
+    page-break-after: 10px;
+    padding-right: 15px;
+    border-bottom-color: #f1f1f1;
+}
+.user-list a .container img{
+    height: 50px;
+    width: 50px;
+}
+.user-list .status-dot{
+    color: blue;
+}
+.user-list{
+    max-height: 350px;
+    overflow-y: auto;
+}
+:is(.user-list, .chat-box)::-webkit-scrollbar{
+    width: 0px;
+}
+.user-list a .container p{
+    color: #67676a;
+}
+/* we use this class name in php for offline status */
+.user-list a .status-dot.offline{
+    color: #ccc;
+}
+
+/* chat area css design code */
+.chat-area header{
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+}
+.chat-area header img{
+    height: 50px;
+    width: 50px;
+    margin: 0px 15px;
+}
+.chat-area .back-icon{
+    font-size: 17px;
+    color: #333;
+}
+.chat-area header span{
+    font-size: 17px;
+    font-weight: 500;
+}
+.chat-box{
+    overflow-y: auto;
+    height: 350px;
+    background: #f7f7f7;
+    padding: 10px 30px 20px 30px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 /5%),
+                inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+.chat-box .chat{
+    margin: 15px 0px;
+}
+.chat-box .chat p{
+    padding: 8px 16px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 /5%),
+                inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+
+}
+.chat-box .outgoing{
+    display: flex;
+}
+.outgoing .detail{
+    margin-left: auto;
+    max-width: calc(100% - 130px);
+}
+.outgoing .detail p{
+    color: #fff;
+    background: #333;
+    border-radius: 18px 18px 0px 18px
+}
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+}
+.chat-box .incoming img{
+    height: 35px;
+    width: 35px;
+}
+.chat-box .incoming .detail p{
+    color: #333;
+    background: rgb(236, 227, 227);
+    border-radius: 18px 18px 18px 0px;
+
+}
+.incoming .detail{
+    margin-left: 10px;
+    margin-right: auto;
+    width: calc(100% - 130px);
+}
+.chat-area .chat-form{
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 30px;
+}
+.chat-form input{
+    height: 45px;
+    width: 78%;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    padding: 0px 13px;
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
+}
+.chat-form button{
+    width: 55px;
+    border: none;
+    outline: none;
+    border-radius: 0px 5px 5px 0px;
+    color: #fff;
+    background: #333;
+    font-size: 40px;
+    cursor: pointer;
+}

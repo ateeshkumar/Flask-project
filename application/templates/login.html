@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="wraper position-absolute top-50 start-50 translate-middle">
+    <section class="form login d-flex justify-content-center">
+    <header>{{title}}</header>
+    <form action="" method = "POST" novalidate>
+        {{form.hidden_tag()}}
+        <p>
+        {{form.email.lable}}<br>
+        {{form.email(size=35)}}
+        {% for error in form.email.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+        </p>
+        <p>
+        {{form.password.lable}}<br>
+        {{form.password(size=35)}}
+        {% for error in  form.password.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+        </p>
+        <p>
+        {{form.submit()}}
+        </p>
+    </form>
+    </section>
+</div>
+
+{% endblock %}

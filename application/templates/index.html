@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+      <h1 class="text-center">Welcome to University Academy</h1>
+      {% if login %}
+      <h3 class="text-center">Let's get started</h3>
+      {% else %}
+      <p class="text-center">Already registerd?<a class="nav-link" href="{{url_for('login')}}">login</a></p>
+      {% endif %}
+    <div>
+{% endblock  %}        

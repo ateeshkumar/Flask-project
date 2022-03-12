@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="wraper position-absolute top-50 start-50 translate-middle">
+    <section class="form signup">
+    <header>{{title}}</header>
+    <form action="" method="GET"  novalidate>
+        {{form.hidden_tag()}}
+        <div class="name-detail">
+        <div class="field">
+            <label for="fname">Frist Name</label>
+            {{form.first_name(size=35)}}
+        </div>
+        <div class="field">
+            <label for="lname">Last Name</label>
+            {{form.last_name(size=35)}}
+        </div>
+        </div>
+        <div class="field">
+            <label for="Email">Email</label>
+            {{form.email(size=35)}}
+            {% for error in form.email.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+        </div>
+        <div class="field">
+            <label for="pass">Password</label>
+            {{form.password(size=6)}}
+            {% for error in  form.password.errors %}
+            <span class="error-message">{{ error }}</span>
+                {% endfor %}
+        </div>
+        <div class="field button">
+            {{form.submit()}}
+        </div>
+    </form>
+    </section>
+</div>
+
+{% endblock %}

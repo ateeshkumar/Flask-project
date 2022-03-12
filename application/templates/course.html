@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="text-center">Courses</h1>
+<h3 class="text-center">Term {{term}}</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Course ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Credit</th>
+        <th scope="col">Term</th>
+        <th scope="col">Enroll</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for data in coursedata %}
+      <tr>
+        <th scope="row">{{data["id"]}}</th>
+        <td>{{data["title"]}}</td>
+        <td>{{data["description"]}}</td>
+        <td>{{data["ppu"]}}</td>
+        <td>{{data["batters"]}}</td>
+        <form action="{{url_for('enrollment')}}" method ="GET">
+            <input type = "hidden" name= "id" value = "{{data['id']}}">
+            <input type = "hidden" name= "title" value = "{{data['title']}}">
+            <input type = "hidden" name= "batters" value = "{{data['batters']}}">
+        <td><button class="btn btn-primary">Enroll</button></td>
+        </form>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+{% endblock%}
